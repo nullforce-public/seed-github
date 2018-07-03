@@ -1,6 +1,8 @@
 # seed-github
 Seeds a github repository for a .NET project.
 
+[![Build status](https://ci.appveyor.com/api/projects/status/ibqxl9ct5ry3bwob/branch/master?svg=true)](https://ci.appveyor.com/project/glenngit/seed-github/branch/master)
+
 ## Usage
 
 ### Install from NuGet
