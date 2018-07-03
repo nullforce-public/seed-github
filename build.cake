@@ -23,21 +23,27 @@ Task("Clean")
     CleanDirectory(distDir);
 });
 
-Task("Version")
-.Does(() => {
+Task("VersionBuildServer")
+.WithCriteria(() => AppVeyor.IsRunningOnAppVeyor)
+.Does(() =>
+{
     var settings = new GitVersionSettings
     {
         OutputType = GitVersionOutput.BuildServer
     };
 
     GitVersion(settings);
+});
 
-    var versionInfoSettings = new GitVersionSettings
+Task("Version")
+.IsDependentOn("VersionBuildServer")
+.Does(() => {
+    var settings = new GitVersionSettings
     {
         OutputType = GitVersionOutput.Json
     };
 
-    versionInfo = GitVersion(versionInfoSettings);
+    versionInfo = GitVersion(settings);
 });
 
 Task("Pack")
