@@ -3,6 +3,6 @@
   "Author": "nullforce",
   "classifications": [ "nullforce", "github", "dotnet-new" ],
   "identity": "Nullforce.DotnetTemplate.GitHub",
-  "name": "Nullforce Template for GitHub v0.1.0",
+  "name": "Nullforce Template for GitHub",
   "shortname": "nf-github"
 }

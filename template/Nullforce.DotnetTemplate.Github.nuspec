@@ -7,6 +7,9 @@
       Adds special files for GitHub repositories, including a .github folder.
     </description>
     <authors>nullforce</authors>
+    <projectUrl>https://github.com/nullforce/seed-github</projectUrl>
+    <licenseUrl>https://github.com/nullforce/seed-github/LICENSE.md</licenseUrl>
+    <tags>nullforce dotnet-new github</tags>
     <packageTypes>
       <packageType name="Template" />
     </packageTypes>
