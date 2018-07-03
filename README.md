@@ -1,7 +1,22 @@
 # seed-github
-Seeds a github repository for a .NET project
+Seeds a github repository for a .NET project.
 
-##
+## Usage
+
+### Install from NuGet
+Execute the following to add the template to `dotnet new`.
+
+```PowerShell
+dotnet new -i Nullforce.DotnetTemplate.Github
+```
+
+### Running the Template
+Execute the following `dotnet new` command. Afterward, review the files created
+and edit their contents as needed (removing any unwanted files).
+
+```PowerShell
+dotnet new nf-github
+```
 
 
 # Resources
