@@ -1,3 +1,5 @@
+#tool "nuget:?package=GitVersion.CommandLine"
+
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
@@ -10,6 +12,7 @@ var configuration = Argument("configuration", "Release");
 //////////////////////////////////////////////////////////////////////
 
 var distDir = Directory("./dist");
+GitVersion versionInfo = null;
 
 //////////////////////////////////////////////////////////////////////
 // TASKS
@@ -20,11 +23,31 @@ Task("Clean")
     CleanDirectory(distDir);
 });
 
+Task("Version")
+.Does(() => {
+    var settings = new GitVersionSettings
+    {
+        OutputType = GitVersionOutput.BuildServer
+    };
+
+    GitVersion(settings);
+
+    var versionInfoSettings = new GitVersionSettings
+    {
+        OutputType = GitVersionOutput.Json
+    };
+
+    versionInfo = GitVersion(versionInfoSettings);
+});
+
 Task("Pack")
 .IsDependentOn("Clean")
+.IsDependentOn("Version")
 .Does(() => {
     var settings = new NuGetPackSettings
     {
+        Version = versionInfo.SemVer,
+        NoPackageAnalysis = true,
         OutputDirectory = distDir
     };
 
