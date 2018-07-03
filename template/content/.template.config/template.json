@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "Author": "nullforce",
+  "classifications": [ "nullforce", "github", "dotnet-new" ],
+  "identity": "Nullforce.DotnetTemplate.GitHub",
+  "name": "Nullforce Template for GitHub v0.1.0",
+  "shortname": "nf-github"
+}
