@@ -1,7 +1,12 @@
 # seed-github
 Seeds a github repository for a .NET project.
 
-[![Build status](https://ci.appveyor.com/api/projects/status/ibqxl9ct5ry3bwob/branch/master?svg=true)](https://ci.appveyor.com/project/glenngit/seed-github/branch/master)
+|||
+----------------------|---
+**Build**             | TBD
+**NuGet**             | ![Nuget](https://img.shields.io/nuget/v/Nullforce.DotnetTemplate.GitHub.svg)
+**NuGet (prerelease)**| ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Nullforce.DotnetTemplate.GitHub.svg)
+
 
 ## Usage
 
