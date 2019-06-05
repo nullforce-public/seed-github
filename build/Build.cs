@@ -45,7 +45,8 @@ class Build : NukeBuild
     Target ExportGitVersion => _ => _
         .Executes(() =>
         {
-            Console.Write($"##vso[task.setvariable variable=GitVersion_NuGetVersionV2]{GitVersion.NuGetVersionV2}");
+            Logger.Info($"Setting GitVersion_NuGetVersionV2 to {GitVersion.NuGetVersionV2}");
+            SetVariable("GitVersion_NuGetVersionV2", GitVersion.NuGetVersionV2);
         });
 
     Target Restore => _ => _
