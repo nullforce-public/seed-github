@@ -24,8 +24,11 @@ steps:
     filePath: './build.sh'
     arguments: '--target Clean --skip'
   displayName: 'Run the Clean target'
+- bash:
+    filePath: './build.sh'
+    arguments: '--target ExportGitVersion --skip'
+  displayName: 'Run the ExportGitVersion target'
 - bash: |
-    ./build.sh --target ExportGitVersion --skip
     echo "##vso[build.updatebuildnumber]${GitVersion_NuGetVersionV2}_${BUILD_BUILDNUMBER}"
   displayName: 'Set build number'
 - task: Bash@3
