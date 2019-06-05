@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Nullforce.DotnetTemplate.GitHub</id>
-    <version>0.1.0</version>
+    <version>$version$</version>
     <description>
       Adds special files for GitHub repositories, including a .github folder.
     </description>
@@ -14,4 +14,7 @@
       <packageType name="Template" />
     </packageTypes>
   </metadata>
+  <files>
+    <file src="content/**" exclude="" />
+  </files>
 </package>

@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <Version>0.1.0</Version>
+    <NuspecFile>Nullforce.DotnetTemplate.GitHub.nuspec</NuspecFile>
+    <NuspecProperties>version=$(Version)</NuspecProperties>
+  </PropertyGroup>
+</Project>
