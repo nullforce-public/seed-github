@@ -4,7 +4,13 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+    - refs/tags/*
+  paths:
+    exclude:
+      - README.md
 
 pool:
   vmImage: 'Ubuntu-16.04'

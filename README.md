@@ -3,7 +3,7 @@ Seeds a github repository for a .NET project.
 
 |||
 ----------------------|---
-**Build**             | TBD
+**Build**             | [![Build Status](https://dev.azure.com/nullforce-public/DotnetTemplates/_apis/build/status/Nullforce.DotnetTemplate.GitHub?branchName=master)](https://dev.azure.com/nullforce-public/DotnetTemplates/_build/latest?definitionId=6&branchName=master)
 **NuGet**             | ![Nuget](https://img.shields.io/nuget/v/Nullforce.DotnetTemplate.GitHub.svg)
 **NuGet (prerelease)**| ![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Nullforce.DotnetTemplate.GitHub.svg)
 
