@@ -57,7 +57,6 @@ class Build : NukeBuild
         {
             Logger.Info(GitVersion.NuGetVersionV2);
 
-            //dotnet pack .\template\Nullforce.DotnetTemplate.GitHub.csproj -o ..\output /p:version="0.1.0"
             DotNetPack(s => s
                 .SetConfiguration(Configuration)
                 .SetProperty("Version", GitVersion.NuGetVersionV2)

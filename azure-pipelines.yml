@@ -22,5 +22,20 @@ steps:
 - task: Bash@3
   inputs:
     filePath: './build.sh'
-    arguments: '--target Publish --nuget-api-key $(NUGETAPIKEY)'
+    arguments: '--target Clean --skip'
+  displayName: 'Run the Clean target'
+- task: Bash@3
+  inputs:
+    filePath: './build.sh'
+    arguments: '--target Restore --skip'
+  displayName: 'Run the Restore target'
+- task: Bash@3
+  inputs:
+    filePath: './build.sh'
+    arguments: '--target Package --skip'
+  displayName: 'Run the Package target'
+- task: Bash@3
+  inputs:
+    filePath: './build.sh'
+    arguments: '--target Publish --skip --nuget-api-key $(NUGETAPIKEY)'
   displayName: 'Run the Publish target'
