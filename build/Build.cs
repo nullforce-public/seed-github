@@ -42,6 +42,12 @@ class Build : NukeBuild
             EnsureCleanDirectory(OutputDirectory);
         });
 
+    Target ExportGitVersion => _ => _
+        .Executes(() =>
+        {
+            Console.Write($"##vso[task.setvariable variable=GitVersion_NuGetVersionV2]{GitVersion.NuGetVersionV2}");
+        });
+
     Target Restore => _ => _
         .After(Clean)
         .Executes(() =>
