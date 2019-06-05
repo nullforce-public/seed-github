@@ -42,8 +42,17 @@ class Build : NukeBuild
             EnsureCleanDirectory(OutputDirectory);
         });
 
+    Target Restore => _ => _
+        .After(Clean)
+        .Executes(() =>
+        {
+            DotNetRestore(s => s
+                .SetProjectFile(Solution));
+        });
+
     Target Package => _ => _
         .After(Clean)
+        .DependsOn(Restore)
         .Executes(() =>
         {
             Logger.Info(GitVersion.NuGetVersionV2);
@@ -60,6 +69,7 @@ class Build : NukeBuild
     Target Publish => _ => _
         .DependsOn(Clean)
         .DependsOn(Package)
+        .DependsOn(Restore)
         .Executes(() =>
         {
             if (!IsLocalBuild && string.IsNullOrEmpty(NuGetApiKey))
