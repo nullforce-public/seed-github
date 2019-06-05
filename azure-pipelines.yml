@@ -24,7 +24,8 @@ steps:
     filePath: './build.sh'
     arguments: '--target Clean --skip'
   displayName: 'Run the Clean target'
-- bash:
+- task: Bash@3
+  inputs:
     filePath: './build.sh'
     arguments: '--target ExportGitVersion --skip'
   displayName: 'Run the ExportGitVersion target'
