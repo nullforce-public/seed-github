@@ -42,13 +42,6 @@ class Build : NukeBuild
             EnsureCleanDirectory(OutputDirectory);
         });
 
-    Target ExportGitVersion => _ => _
-        .Executes(() =>
-        {
-            Logger.Info($"Setting GitVersion_NuGetVersionV2 to {GitVersion.NuGetVersionV2}");
-            SetVariable("GitVersion_NuGetVersionV2", GitVersion.NuGetVersionV2);
-        });
-
     Target Restore => _ => _
         .After(Clean)
         .Executes(() =>

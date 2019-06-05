@@ -31,14 +31,6 @@ jobs:
   - task: Bash@3
     inputs:
       filePath: './build.sh'
-      arguments: '--target ExportGitVersion --skip'
-    displayName: 'Run the ExportGitVersion target'
-  - bash: |
-      echo "##vso[build.updatebuildnumber]${GitVersion_NuGetVersionV2}_${BUILD_BUILDNUMBER}"
-    displayName: 'Set build number'
-  - task: Bash@3
-    inputs:
-      filePath: './build.sh'
       arguments: '--target Restore --skip'
     displayName: 'Run the Restore target'
   - task: Bash@3
