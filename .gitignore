@@ -1,5 +1,8 @@
 .vs/
 
-# Ignore Cake build folders
-dist/
-tools/
+**/bin
+**/obj
+
+# Ignore Nuke build folders
+.tmp/
+output/
