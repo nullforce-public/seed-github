@@ -24,9 +24,6 @@ steps:
     filePath: './build.sh'
     arguments: '--target Clean --skip'
   displayName: 'Run the Clean target'
-- bash: |
-    echo "$(GitVersion.NuGetVersionV2)"
-  displayName: 'Echo GitVersion'
 - task: Bash@3
   inputs:
     filePath: './build.sh'
